@@ -21,24 +21,34 @@
                     </div>
 
                     <div class="others" id="current-weather-items">
-                        <div class="weather-item">
+                        <div class="weather-item" id="humidity">
                             <div>Humidity</div>
                             <div>95.2%</div>
                       </div>
-                        <div class="weather-item">
+                        <div class="weather-item" id="pressure">
                             <div>Pressure</div>
                             <div>121</div>
                         </div>
-                        <div class="weather-item">
+                        <div class="weather-item" id="wind">
                             <div>Wind</div>
                             <div>222</div>
+                        </div>
+                        <div class="weater-item"   id="feel-like">
+                            
                         </div>
                     </div>
                 
             </div>
+            <div class="input">
+                <form onsubmit="getWeather () ; return  false">
+                <input type="text" id="cityName">
+                <br>
+                <button type="submit">Get Weather</button>
+                </form>
+            </div>
 
             <div class="place-container">
-                <div class="time-zone" id="time-zone">Asia/Karachi</div>
+                <div class="time-zone" id="time-zone"></div>
                 <div id="country" class="country">IN</div>
             </div>
 
@@ -102,7 +112,7 @@
         </div>
     </div>
     
-
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

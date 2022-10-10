@@ -29,3 +29,27 @@ setInterval(() => {
 
 
 }, 1000);
+
+let getWeather = () => {
+
+    let cityName = document.querySelector("#cityName").value
+
+axios.get(`https://api.openweathermap.org/data/2.5/weather?units=metric&appid=d1f19bdfe0425dd932f13b7692fc00d3&q=${cityName}`)
+
+.then(function (response) {
+// handle success
+console.log("response is success");
+console.log(response.data);
+document.querySelector("#time-zone").innerHTML =
+          `${response.data.name}`
+document.querySelector("#humidity").innerHTML =
+          `Humidity  ${response.data.main.humidity}`
+
+})
+ .catch(function (error) {
+  // handle error
+  console.log(error);
+})
+
+}   
+
