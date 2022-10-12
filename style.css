@@ -117,3 +117,11 @@ body {
 .weather-forecast .weather-forecast-item .temp{
     font-weight: 100;
 }
+@media only screen and (max-width:1000px) {
+    .future-forecast {
+        justify-content: start;
+        align-items: none;
+        overflow-y: scroll;
+    }
+    
+}

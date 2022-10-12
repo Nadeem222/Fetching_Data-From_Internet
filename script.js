@@ -1,6 +1,6 @@
 let timeEl =document.getElementById('time');
 let dateEl = document.getElementById('date');
-let cureentWeatherItemEl = document.getElementById('current-weather-items');
+let currentWeatherItemEl = document.getElementById('current-weather-items');
 let timeZOne = document.getElementById('time-zone');
 let countryEl = document.getElementById('country');
 let weatherForecastEl = document.getElementById('weather-forecast');
@@ -40,14 +40,20 @@ axios.get(`https://api.openweathermap.org/data/2.5/weather?units=metric&appid=d1
 // handle success
 console.log("response is success");
 console.log(response.data);
-document.querySelector("#time-zone").innerHTML =
+        document.querySelector("#time-zone").innerHTML =
           `${response.data.name}`
-document.querySelector("#humidity").innerHTML =
-          `Humidity  ${response.data.main.humidity}`
+        document.querySelector("#humidity").innerHTML =
+          `  ${response.data.main.humidity}%`
+        document.querySelector("#pressure").innerHTML =
+          `  ${response.data.main.pressure}`
+        document.querySelector("#wind").innerHTML =
+          `  ${response.data.wind.speed}`
+          document.querySelector("#feel-like").innerHTML =
+          `  ${response.data.main.feels_like}`
 
 })
  .catch(function (error) {
-  // handle error
+  // handle errorf
   console.log(error);
 })
 
